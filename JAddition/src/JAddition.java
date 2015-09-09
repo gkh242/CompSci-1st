@@ -4,8 +4,8 @@ public class  JAddition
 {
 public static void main(String [] args) 
 {
-System.out.println("Hello idiot.");
-System.out.println("I will add three numbers for you because you failed elementary school.");
+System.out.println("Hello");
+System.out.println("I will add three numbers for you.");
 System.out.println("Enter three whole numbers on a line:");
 
 int n1, n2, n3;
