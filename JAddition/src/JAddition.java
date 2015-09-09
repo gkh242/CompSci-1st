@@ -18,6 +18,6 @@ n3 = keyboard.nextInt();
 
 
 System.out.println("The sum of those three numbers is");
-System.out.println(n1 * n2 * n3);
+System.out.println(n1 + n2 + n3);
 }
 }
