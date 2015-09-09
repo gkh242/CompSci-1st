@@ -6,7 +6,7 @@ public static void main(String [] args)
 {
 System.out.println("Hello");
 System.out.println("I will add three numbers for you.");
-System.out.println("Enter three whole numbers on a line:");
+System.out.println("Enter three integers on a line:");
 
 int n1, n2, n3;
 
