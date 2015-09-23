@@ -1,0 +1,24 @@
+	import java.util.Scanner;
+public class Assignment3Sumof5 {
+
+	public static void main(String [] args)
+	{
+	System.out.println("Hello.");
+	System.out.println("I will add five numbers.");
+	System.out.println("Enter five whole numbers on a line:");
+
+	int n1, n2, n3, n4, n5;
+
+
+	Scanner keyboard = new Scanner(System.in);
+	n1 = keyboard.nextInt();
+	n2 = keyboard.nextInt();
+	n3 = keyboard.nextInt();
+	n4 = keyboard.nextInt();
+	n5 = keyboard.nextInt();
+
+
+	System.out.println("The sum of those five numbers is");
+	System.out.println(n1 + n2 + n3 + n4 + n5);
+	}
+	}
