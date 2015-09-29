@@ -1,0 +1,42 @@
+import javax.swing.JOptionPane;
+/**
+ * 
+ * @author Gregory K Hancock
+ * @version 1.0
+ *
+ */
+public class Ce34 {
+	
+	/**
+	* This is a group dividing program
+	* @param args
+	*/
+	
+	public static void main(String[] args) {
+			String amount = 
+				JOptionPane.showInputDialog("enter amount of people:");
+				int pplcount = Integer.parseInt(amount);
+						
+				if (pplcount > 10)
+				{
+				JOptionPane.showMessageDialog(null," number of people is " + pplcount + " and group size is = " + pplcount / 2);
+				}else{
+					if ((pplcount >= 3) && (pplcount <= 10))
+					{
+					JOptionPane.showMessageDialog(null, " number of people is " + pplcount + " and group size is = " + pplcount/3);
+					}
+					if (pplcount < 3)
+					JOptionPane.showMessageDialog(null, "The number of people has to be at least 3");
+			}
+					String tamount = 
+			JOptionPane.showInputDialog("enter amount of people:");
+			int teamamount = Integer.parseInt(tamount);
+	
+			{
+			if ((teamamount > 10) && (teamamount <= 55))
+			{
+			JOptionPane.showMessageDialog(null, " number of players is " + teamamount + " and team size is = " + teamamount/11);
+				}
+			}
+		}
+	}
