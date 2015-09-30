@@ -1,0 +1,38 @@
+import javax.swing.JOptionPane;
+/**
+ * 
+ * @author Gregory K Hancock
+ * @version 1.0
+ *
+ */
+public class Ce35 {
+		/**
+	* This is a basic user role selection program
+	* @param args
+	*/
+	
+	public static void main(String[] args) {
+		String amount =
+		JOptionPane.showInputDialog("number according to user role. | 1 Administrator | 2 Faculty | 3 Staff | 4 Student | 5 Guest |");
+		int role = Integer.parseInt(amount);
+		
+		switch (role)
+		{
+		case 1:
+			JOptionPane.showMessageDialog(null, "Welcome Administrator");
+			break;
+		case 2:
+			JOptionPane.showMessageDialog(null, "Welcome Faculty");
+			break;
+		case 3:
+			JOptionPane.showMessageDialog(null, "Welcome Staff");
+			break;
+		case 4:
+			JOptionPane.showMessageDialog(null, "Welcome Student");
+			break;
+		case 5:
+			JOptionPane.showMessageDialog(null, "Welcome Guest");
+			break;
+		  }
+		}	
+  }
