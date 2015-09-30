@@ -1,0 +1,62 @@
+
+import javax.swing.JOptionPane;
+/**
+ * 
+ * @author Gregory K Hancock
+ * @version 1.0
+ *
+ */
+	public class Ce36 {
+		
+		/**
+		* This is a basic month selection program using enum
+		* @param args
+		*/
+		enum Month {January, February, March, April, May, June, July, August, September, October, November, December}
+		public static void main(String[] args) {
+			String [] choices = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+			JOptionPane.showInputDialog(null, "Select a month.", "month", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
+			String choices = JOptionPane.showInputDialog("Select Month");
+			
+			switch (choices)
+			{
+			case January:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case February:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case March:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case April:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case May:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case June:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case July:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case August:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case September:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case October:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case November:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			case December:
+				JOptionPane.showMessageDialog(null, "");
+				break;
+			
+			}
+		}
+}
