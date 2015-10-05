@@ -1,0 +1,35 @@
+import javax.swing.JOptionPane;
+
+import Ce36.Month;
+
+public class Assignment3 {
+	
+	enum Accounttype {
+		Administrator, Student, Staff }
+
+
+	public static void main(String[] args) {
+		Accounttype[] enumArray = Account.values();
+		
+		String User1 = JOptionPane.showInputDialog("Enter username:");
+		
+		switch (User1){
+		case "gerg":
+			String Password1 = JOptionPane.showInputDialog("The username is correct. Enter Password");
+			if (Password1.equals("12345"))
+			{ Account choice = (Account) JOptionPane.showInputDialog(null,
+					"Select a month.", "month",
+					JOptionPane.INFORMATION_MESSAGE, null, enumArray,
+					enumArray[0]);
+		}
+
+		//if (User1.equals("gerg")) {
+			//String Pass1 = JOptionPane.showInputDialog("The username is correct.  Enter password");
+
+			//if (Pass1.equals("123456")) {
+//}else{
+		}
+
+	}
+
+}
