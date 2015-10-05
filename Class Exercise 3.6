@@ -1,25 +1,39 @@
 
 import javax.swing.JOptionPane;
+
 /**
  * 
  * @author Gregory K Hancock
  * @version 1.0
  *
  */
-	public class Ce36 {
-		
-		/**
-		* This is a basic month selection program using enum
-		* @param args
-		*/
-		enum Month {January, February, March, April, May, June, July, August, September, October, November, December}
-		public static void main(String[] args) {
-			String [] choices = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-			JOptionPane.showInputDialog(null, "Select a month.", "month", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
-			String choices = JOptionPane.showInputDialog("Select Month");
-			
-			switch (choices)
-			{
+public class Ce36 {
+
+	/**
+	 * This is a basic month selection program using enum
+	 * 
+	 * @param args
+	 */
+	enum Month {
+		January, February, March, April, May, June, July, August, September, October, November, December
+	}
+
+	public static void main(String[] args) {
+		Month[] enumArray = Month.values();
+
+		boolean button = false;
+		while (!button) {
+			Month choice = (Month) JOptionPane.showInputDialog(null,
+					"Select a month.", "month",
+					JOptionPane.INFORMATION_MESSAGE, null, enumArray,
+					enumArray[0]);
+			if (choice == null) {
+
+				return;
+			}
+
+			System.out.print(choice);
+			switch (choice) {
 			case January:
 				JOptionPane.showMessageDialog(null, "");
 				break;
@@ -56,7 +70,8 @@ import javax.swing.JOptionPane;
 			case December:
 				JOptionPane.showMessageDialog(null, "");
 				break;
-			
 			}
+
 		}
+	}
 }
