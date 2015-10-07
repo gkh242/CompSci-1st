@@ -66,16 +66,34 @@ public class Assignment3 {
 		switch (role) {
 		case Administrator:
 			JOptionPane.showMessageDialog(null,
-					"Do you want to build a snow man?");
+					"INCORRECT TRY AGAIN");
+			getRole();
+			
 			break;
 		case Staff:
 			JOptionPane.showMessageDialog(null,
-					"Do you want to build a snow man?");
+					"INCORRECT TRY AGAIN");
+			getRole();
+			
 			break;
 		case Student:
-			JOptionPane.showMessageDialog(null, "Happy Spring days!");
+			JOptionPane.showMessageDialog(null, "Welcome Student! You can only read file.");
 			break;
+		}
+		
+		
+		//switch (role) {
+		//case Administrator:
+			//JOptionPane.showMessageDialog(null,
+			//		"Welcome Admin! You can update and read file.");
+			//break;
+		//case Staff:
+			//JOptionPane.showMessageDialog(null,
+			//		"Welcome Staff! You can update, read, add, delete file.");
+			//break;
+		//case Student:
+			//JOptionPane.showMessageDialog(null, "Welcome Student! You can only read file.");
+			//break;
 		}
 
 	}
-}
