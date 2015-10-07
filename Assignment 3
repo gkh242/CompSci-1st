@@ -10,52 +10,50 @@ public class Assignment3 {
 
 	public static void main(String[] args) {
 		while (true) {
-		String user1 = JOptionPane.showInputDialog("Enter username:");
+			String user1 = JOptionPane.showInputDialog("Enter username:");
 
-		getPassword(user1);
-		
-		if(badTries >= 3){
-			return;
-		}
-		
+			getPassword(user1);
+
+			if (badTries >= 3) {
+				return;
+			}
+
 		}
 	}
 
 	private static int badTries = 0;
 
 	private static void getPassword(String user) {
-		
-			String Password;
-			switch (user) {
-			case "gerg":
 
-				Password = JOptionPane
-						.showInputDialog("The username is correct. Enter Password");
-				if (Password.equals("12345")) {
-					getRole();
-					return;
-				}else{
-					badTries++;
-				}
-				break;
-			case "bob":
-				Password = JOptionPane
-						.showInputDialog("The username is correct. Enter Password");
-				if (Password.equals("54321")) {
-					getRole();
-					return;
-				}else{
-					badTries++;
-				}
-				break;
-			default:
-				badTries++;
+		String Password;
+		switch (user) {
+		case "gerg":
+
+			Password = JOptionPane
+					.showInputDialog("The username is correct. Enter Password");
+			if (Password.equals("12345")) {
+				getRole();
 				return;
-				
-
+			} else {
+				badTries++;
 			}
+			break;
+		case "bob":
+			Password = JOptionPane
+					.showInputDialog("The username is correct. Enter Password");
+			if (Password.equals("54321")) {
+				getRole2();
+				return;
+			} else {
+				badTries++;
+			}
+			break;
+		default:
+			badTries++;
+			return;
+
 		}
-	
+	}
 
 	private static void getRole() {
 
@@ -65,35 +63,57 @@ public class Assignment3 {
 
 		switch (role) {
 		case Administrator:
-			JOptionPane.showMessageDialog(null,
-					"INCORRECT TRY AGAIN");
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
 			getRole();
-			
+
 			break;
 		case Staff:
-			JOptionPane.showMessageDialog(null,
-					"INCORRECT TRY AGAIN");
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
 			getRole();
-			
+
 			break;
 		case Student:
-			JOptionPane.showMessageDialog(null, "Welcome Student! You can only read file.");
+			JOptionPane.showMessageDialog(null,
+					"Welcome Student! You can only read file.");
 			break;
 		}
-		
-		
-		//switch (role) {
-		//case Administrator:
-			//JOptionPane.showMessageDialog(null,
-			//		"Welcome Admin! You can update and read file.");
-			//break;
-		//case Staff:
-			//JOptionPane.showMessageDialog(null,
-			//		"Welcome Staff! You can update, read, add, delete file.");
-			//break;
-		//case Student:
-			//JOptionPane.showMessageDialog(null, "Welcome Student! You can only read file.");
-			//break;
-		}
-
 	}
+
+	private static void getRole2() {
+
+		Accounttype role = (Accounttype) JOptionPane.showInputDialog(null,
+				"Password is correct. Select a role.", "role",
+				JOptionPane.INFORMATION_MESSAGE, null, enumArray, enumArray[0]);
+
+		switch (role) {
+		case Administrator:
+			JOptionPane.showMessageDialog(null,
+					"Welcome Admin! You can update and read file.");
+
+			break;
+		case Staff:
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
+			getRole2();
+
+			break;
+		case Student:
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
+			getRole2();
+			break;
+
+		// switch (role) {
+		// case Administrator:
+		// JOptionPane.showMessageDialog(null,
+		// "Welcome Admin! You can update and read file.");
+		// break;
+		// case Staff:
+		// JOptionPane.showMessageDialog(null,
+		// "Welcome Staff! You can update, read, add, delete file.");
+		// break;
+		// case Student:
+		// JOptionPane.showMessageDialog(null,
+		// "Welcome Student! You can only read file.");
+		// break;
+		}
+	}
+}
