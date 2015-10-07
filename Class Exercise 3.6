@@ -1,83 +1,126 @@
 
-import javax.swing.JOptionPane;
-
 /**
  * 
  * @author Gregory K Hancock
  * @version 1.0
  *
  */
-public class Ce36 {
+
+import javax.swing.JOptionPane;
+
+public class Assignment3 {
 
 	/**
-	 * This is a basic month selection program using enum
+	 * This is a user/password.role verification program using
+	 * enum/if/switch/loop
 	 * 
 	 * @param args
 	 */
-	enum Month {
-		January, February, March, April, May, June, July, August, September, October, November, December
+
+	enum Accounttype {
+		Administrator, Student, Staff
 	}
 
+	private static Accounttype[] enumArray = Accounttype.values();
+
 	public static void main(String[] args) {
-		Month[] enumArray = Month.values();
 
-		boolean button = false;
-		while (!button) {
-			Month choice = (Month) JOptionPane.showInputDialog(null,
-					"Select a month.", "month",
-					JOptionPane.INFORMATION_MESSAGE, null, enumArray,
-					enumArray[0]);
-			if (choice == null) {
+		while (true) {
+			String user1 = JOptionPane.showInputDialog("Enter username:");
 
+			getPassword(user1);
+
+			if (badTries >= 3) {
+				JOptionPane.showMessageDialog(null, "Contact Administrator");
 				return;
-			}
-
-			System.out.print(choice);
-			switch (choice) {
-			case January:
-				JOptionPane.showMessageDialog(null,
-						"Do you want to build a snow man?");
-				break;
-			case February:
-				JOptionPane.showMessageDialog(null,
-						"Do you want to build a snow man?");
-				break;
-			case March:
-				JOptionPane.showMessageDialog(null, "Happy Spring days!");
-				break;
-			case April:
-				JOptionPane.showMessageDialog(null, "Happy Spring days!");
-				break;
-			case May:
-				JOptionPane.showMessageDialog(null, "Happy Spring days!");
-				break;
-			case June:
-				JOptionPane.showMessageDialog(null, "It’s a summer time.");
-				break;
-			case July:
-				JOptionPane.showMessageDialog(null, "It’s a summer time.");
-				break;
-			case August:
-				JOptionPane.showMessageDialog(null, "It’s a summer time.");
-				break;
-			case September:
-				JOptionPane.showMessageDialog(null,
-						"Welcome to the foliage season!");
-				break;
-			case October:
-				JOptionPane.showMessageDialog(null,
-						"Welcome to the foliage season!");
-				break;
-			case November:
-				JOptionPane.showMessageDialog(null,
-						"Welcome to the foliage season!");
-				break;
-			case December:
-				JOptionPane.showMessageDialog(null,
-						"Do you want to build a snow man?");
-				break;
 			}
 
 		}
 	}
-}
+
+	private static int badTries = 0;
+
+	private static void getPassword(String user) {
+
+		String Password;
+		switch (user) {
+		case "gerg":
+
+			Password = JOptionPane
+					.showInputDialog("The username is correct. Enter Password");
+			if (Password.equals("12345")) {
+				getRole();
+				return;
+			} else {
+
+				badTries++;
+			}
+			break;
+		case "bob":
+			Password = JOptionPane
+					.showInputDialog("The username is correct. Enter Password");
+			if (Password.equals("54321")) {
+				getRole2();
+				return;
+			} else {
+				badTries++;
+			}
+			break;
+
+		default:
+			JOptionPane.showMessageDialog(null, "Username does not exist");
+			badTries++;
+			return;
+
+		}
+	}
+
+	private static void getRole() {
+
+		Accounttype role = (Accounttype) JOptionPane.showInputDialog(null,
+				"Password is correct. Select a role.", "role",
+				JOptionPane.INFORMATION_MESSAGE, null, enumArray, enumArray[0]);
+
+		switch (role) {
+		case Administrator:
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
+			getRole();
+
+			break;
+		case Staff:
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
+			getRole();
+
+			break;
+		case Student:
+			JOptionPane.showMessageDialog(null,
+					"Welcome Student! You can only read file.");
+			break;
+		}
+	}
+
+	private static void getRole2() {
+
+		Accounttype role = (Accounttype) JOptionPane.showInputDialog(null,
+				"Password is correct. Select a role.", "role",
+				JOptionPane.INFORMATION_MESSAGE, null, enumArray, enumArray[0]);
+
+		switch (role) {
+		case Administrator:
+			JOptionPane.showMessageDialog(null,
+					"Welcome Admin! You can update and read file.");
+
+			break;
+		case Staff:
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
+			getRole2();
+
+			break;
+		case Student:
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
+			getRole2();
+
+			break;
+			
+
+		}
