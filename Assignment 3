@@ -27,6 +27,7 @@ public class Assignment3 {
 			getPassword(user1);
 
 			if (badTries >= 3) {
+				JOptionPane.showInputDialog("Locked Contact Administrator ");
 				return;
 			}
 
@@ -112,3 +113,20 @@ public class Assignment3 {
 			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
 			getRole2();
 			break;
+
+		// switch (role) {
+		// case Administrator:
+		// JOptionPane.showMessageDialog(null,
+		// "Welcome Admin! You can update and read file.");
+		// break;
+		// case Staff:
+		// JOptionPane.showMessageDialog(null,
+		// "Welcome Staff! You can update, read, add, delete file.");
+		// break;
+		// case Student:
+		// JOptionPane.showMessageDialog(null,
+		// "Welcome Student! You can only read file.");
+		// break;
+		}
+	}
+}
