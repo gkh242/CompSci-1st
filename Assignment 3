@@ -1,35 +1,81 @@
 import javax.swing.JOptionPane;
 
-import Ce36.Month;
-
 public class Assignment3 {
-	
-	enum Accounttype {
-		Administrator, Student, Staff }
 
+	enum Accounttype {
+		Administrator, Student, Staff
+	}
+
+	private static Accounttype[] enumArray = Accounttype.values();
 
 	public static void main(String[] args) {
-		Accounttype[] enumArray = Account.values();
+		while (true) {
+		String user1 = JOptionPane.showInputDialog("Enter username:");
+
+		getPassword(user1);
 		
-		String User1 = JOptionPane.showInputDialog("Enter username:");
-		
-		switch (User1){
-		case "gerg":
-			String Password1 = JOptionPane.showInputDialog("The username is correct. Enter Password");
-			if (Password1.equals("12345"))
-			{ Account choice = (Account) JOptionPane.showInputDialog(null,
-					"Select a month.", "month",
-					JOptionPane.INFORMATION_MESSAGE, null, enumArray,
-					enumArray[0]);
+		if(badTries >= 3){
+			return;
 		}
+		
+		}
+	}
 
-		//if (User1.equals("gerg")) {
-			//String Pass1 = JOptionPane.showInputDialog("The username is correct.  Enter password");
+	private static int badTries = 0;
 
-			//if (Pass1.equals("123456")) {
-//}else{
+	private static void getPassword(String user) {
+		
+			String Password;
+			switch (user) {
+			case "gerg":
+
+				Password = JOptionPane
+						.showInputDialog("The username is correct. Enter Password");
+				if (Password.equals("12345")) {
+					getRole();
+					return;
+				}else{
+					badTries++;
+				}
+				break;
+			case "bob":
+				Password = JOptionPane
+						.showInputDialog("The username is correct. Enter Password");
+				if (Password.equals("54321")) {
+					getRole();
+					return;
+				}else{
+					badTries++;
+				}
+				break;
+			default:
+				badTries++;
+				return;
+				
+
+			}
+		}
+	
+
+	private static void getRole() {
+
+		Accounttype role = (Accounttype) JOptionPane.showInputDialog(null,
+				"Password is correct. Select a role.", "role",
+				JOptionPane.INFORMATION_MESSAGE, null, enumArray, enumArray[0]);
+
+		switch (role) {
+		case Administrator:
+			JOptionPane.showMessageDialog(null,
+					"Do you want to build a snow man?");
+			break;
+		case Staff:
+			JOptionPane.showMessageDialog(null,
+					"Do you want to build a snow man?");
+			break;
+		case Student:
+			JOptionPane.showMessageDialog(null, "Happy Spring days!");
+			break;
 		}
 
 	}
-
 }
