@@ -1,5 +1,7 @@
 /**
  * 
+ /**
+ * 
  * @author Gregory K Hancock
  * @version 1.0
  *
@@ -44,7 +46,7 @@ public class Assignment3 {
 
 			Password = JOptionPane
 					.showInputDialog("The username is correct. Enter Password");
-			if (Password.equals("12345")) {
+			if (Password.equals("11111")) {
 				getRole();
 				return;
 			} else {
@@ -54,8 +56,18 @@ public class Assignment3 {
 		case "bob":
 			Password = JOptionPane
 					.showInputDialog("The username is correct. Enter Password");
-			if (Password.equals("54321")) {
+			if (Password.equals("22222")) {
 				getRole2();
+				return;
+			} else {
+				badTries++;
+			}
+			break;
+		case "jim":
+			Password = JOptionPane
+					.showInputDialog("The username is correct. Enter Password");
+			if (Password.equals("33333")) {
+				getRole3();
 				return;
 			} else {
 				badTries++;
@@ -112,6 +124,31 @@ public class Assignment3 {
 		case Student:
 			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
 			getRole2();
+			break;
+
+	
+		}
+	}
+	private static void getRole3() {
+
+		Accounttype role = (Accounttype) JOptionPane.showInputDialog(null,
+				"Password is correct. Select a role.", "role",
+				JOptionPane.INFORMATION_MESSAGE, null, enumArray, enumArray[0]);
+
+		switch (role) {
+		case Administrator:
+			JOptionPane.showMessageDialog(null,
+					"INCORRECT TRY AGAIN");
+			getRole3();
+
+			break;
+		case Staff:
+			JOptionPane.showMessageDialog(null, "Welcome Staff! You can update, read, add, delete file.");
+			
+			break;
+		case Student:
+			JOptionPane.showMessageDialog(null, "INCORRECT TRY AGAIN");
+			getRole3();
 			break;
 
 		// switch (role) {
