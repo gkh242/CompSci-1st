@@ -1,0 +1,56 @@
+package edu.nvcc.csc200.javafx;
+
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+
+public class Ce41 +{
+	
+	public static void main(String[] args) {
+		//TODO Auto generate method sub
+		Launch(args);
+	}
+	
+	private static void Launch(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Overrride
+	public void start(Stage primaryStage) {
+		String correctUserName = "gerg";
+		String correctPassword = "11111";
+		primaryStage.setTitle("Authentication");
+		TextField userNameTxtFld = new TextField();
+		TextField pwTxtFld = new TextField();
+		
+		Button submitBtn = new Button("Submit");
+		submitBtn.setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActonEvent arg0) {
+				if(correctUserName.equals(input) && correctPassword.equals((inputP))) {
+				JOptionPane.showMessageDialog(null, "Welcome !");
+				}else{
+					JOptionPane.showMessageDialog(null, "Fail Authentication");
+				}
+			}
+			
+		});
+		
+		GridPane grid= new GridPane();
+		grid.setAlignment(Pos.CENTER);
+		grid.setVgap(10);
+		
+		
+		grid.add(userNameTxtFld,1,0);
+		grid.add(pwTxtFld,1,1);
+		grid.add(submitBtn,1,2);
+		
+		Scene scene = new Scene(grid, 500,500);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		
+		
+	}
+}
