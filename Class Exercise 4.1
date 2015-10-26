@@ -25,8 +25,9 @@ public class CE41 extends Application {
 
 	
 
-	@Overrride
+
 	public void start(Stage primaryStage) {
+		
 		String correctUserName = "csc200";
 		String correctAccounttype = "admin";
 		String correctPassword = "password";
@@ -37,26 +38,31 @@ public class CE41 extends Application {
 		TextField userNameTxtFld = new TextField();
 		TextField AccounttypeTxtFld = new TextField();
 		PasswordField pwTxtFld = new PasswordField();
-
+		@Overrride
 		Button submitBtn = new Button("Submit");
 		submitBtn.setOnAction(new EventHandler<ActionEvent>() {
+		
+			
+			boolean redo;
+			
+			
 			String inputUserName = "";
 			String inputPw = "";
 			String inputAccouttype = "";
-			public void handle1(ActionEvent arg0) {
+			public void handle(ActionEvent arg0) {
+				do {
 				inputUserName = userNameTxtFld.getText();
 				inputPw = pwTxtFld.getText();
 				inputAccouttype = AccounttypeTxtFld.getText();
 				if (correctUserName.equals(inputUserName) && correctAccounttype.equals(inputAccouttype)
 						&& correctPassword.equals((inputPw))) {
 					JOptionPane.showMessageDialog(null, "Welcome"
-							+ inputUserName);
+							+" " + inputUserName);
 				} else {
 					JOptionPane.showMessageDialog(null, "Fail Authentication");
 				}
 			}
-
-			public void handle(ActionEvent arg0) {
+			while (redo = false);
 				// TODO Auto-generated method stub
 
 			}
