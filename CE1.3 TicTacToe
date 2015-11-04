@@ -16,6 +16,10 @@ public class TicTacToe extends JApplet {
 		canvas.drawLine(45, 45, 55, 55);
 		canvas.drawLine(55, 45, 45, 55);
 
+		canvas.drawOval(24, 4, 12, 12);
+		canvas.drawOval(44, 4, 12, 12);
+		canvas.drawOval(44, 24, 12, 12);
+		
 		canvas.drawLine(4, 4, 56, 56);
 	}
 }
